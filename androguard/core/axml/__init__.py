@@ -2820,7 +2820,7 @@ class ARSCHeader:
                 == cur_pos + self._header_size + 4 + 4
             ):
                 self._size = 24
-            header_ok = self._header_size >= self.SIZE and self._size > self.SIZE
+            header_ok = self._header_size >= self.SIZE and self._size >= self._header_size
             if (self._type < RES_XML_FIRST_CHUNK_TYPE or self._type > RES_XML_LAST_CHUNK_TYPE) and header_ok:
                 break
             if cur_pos == 0 or header_ok:
