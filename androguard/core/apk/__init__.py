@@ -2416,6 +2416,8 @@ class APK:
         self._is_signed_v2 = False
         self._is_signed_v3 = False
         self._is_signed_v31 = False
+        if not isinstance(self._v2_blocks, list):
+            self._v2_blocks = []
 
         if magic != self._APK_SIG_MAGIC:
             return
